@@ -1,11 +1,11 @@
-import { headers } from "next/headers";
+import { getSubdomain } from "@/utils/getSubdomain";
 
 export default function Home() {
-  const hostname = headers().get("x-hostname");
+  const subdomain = getSubdomain();
 
   return (
     <main>
-      <h1>Hello {hostname}</h1>
+      <h1>Hello {subdomain}</h1>
       <pre>Markdown goes here</pre>
     </main>
   );
