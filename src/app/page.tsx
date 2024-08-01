@@ -1,12 +1,12 @@
+import Markdown from "react-markdown";
+
+import { getMarkdown } from "@/utils/getContent";
 import { getSubdomain } from "@/utils/getSubdomain";
 
-export default function Home() {
+export default async function Home() {
   const subdomain = getSubdomain();
 
-  return (
-    <main>
-      <h1>Hello {subdomain}</h1>
-      <pre>Markdown goes here</pre>
-    </main>
-  );
+  const { markdown } = await getMarkdown(subdomain);
+
+  return <main>{markdown && <Markdown>{markdown.markdown}</Markdown>}</main>;
 }
