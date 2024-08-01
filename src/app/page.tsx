@@ -8,5 +8,11 @@ export default async function Home() {
 
   const { markdown } = await getMarkdown(subdomain);
 
-  return <main>{markdown && <Markdown>{markdown.markdown}</Markdown>}</main>;
+  return (
+    <main>
+      {markdown && (
+        <Markdown className="markdown">{markdown.markdown}</Markdown>
+      )}
+    </main>
+  );
 }
