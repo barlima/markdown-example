@@ -10,9 +10,11 @@ export default async function Home() {
 
   return (
     <main>
-      {markdown && (
-        <Markdown className="markdown">{markdown.markdown}</Markdown>
-      )}
+      <div>
+        {markdown && (
+          <Markdown className="markdown">{markdown.markdown}</Markdown>
+        )}
+      </div>
     </main>
   );
 }
